@@ -3,7 +3,13 @@ name: Publish Documentation
 
 on:
   push:
-    branches: ["develop"]
+    branches:
+      - develop
+      - production
+  pull_request:
+    branches:
+      - develop
+      - production
 
 jobs:
   build:

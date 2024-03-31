@@ -14,9 +14,9 @@ where = ["src"]
 egg_base = "."
 
 [project]
-name = "project"
+name = "proj3"
 version = "0.0.1"
-description = "description of the project"
+description = "station control framework to control instrument in qcodes for now!!!"
 authors = [{name = "Ai-mation"}]
 readme = "README.md"
 requires-python = ">=3.9"
@@ -35,7 +35,7 @@ addopts = ""
 testpaths = ["tests"]
 
 [project.urls]
-Homepage = "https://github.com/Ai-mation/python-template.git"
+Homepage = "https://github.com/Ai-mation/STE.git"
 
 [tool.black]
 line-length = 79

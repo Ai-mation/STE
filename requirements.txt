@@ -6,7 +6,6 @@ identify==2.5.35
 iniconfig==2.0.0
 nodeenv==1.8.0
 numpy==1.26.4
-packaging==23.2
 pandas==2.2.1
 platformdirs==4.2.0
 pluggy==1.4.0

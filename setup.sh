@@ -1,15 +1,17 @@
-rm -rf venv
-python3 -m venv venv
+rm -rf env
+python3 -m venv env
 if [[ "$OSTYPE" == "darwin"* ]]
 then
-    source ./venv/bin/activate
+    source ./env/bin/activate
 
 elif [[ "$OSTYPE" == "msys" ]]
 then
-    source ./venv/Scripts/activate
+    source ./env/Scripts/activate
 
 
 fi
 pip install --upgrade pip
-pip install --editable ".[dev]"
+pip install -r requirements.txt
+pip install -r requirements-dev.txt
+pip install --editable "."
 pre-commit install

@@ -39,7 +39,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest] #ubuntu-latest]
-        python-version: ['3.10'] #['3.11', '3.12']
+        python-version: ['3.9'] #['3.11', '3.12']
 
     steps:
       - name: Checkout code
@@ -63,7 +63,7 @@ jobs:
     strategy:
       matrix:
 
-        python-version: ['3.10', '3.11', '3.12']
+        python-version: ['3.9'] #['3.11', '3.12']
 
     steps:
       - uses: actions/checkout@v4
@@ -86,7 +86,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        python-version: ['3.10', '3.11', '3.12']
+        python-version: ['3.9'] #[ '3.11', '3.12']
 
     steps:
       - uses: actions/checkout@v4

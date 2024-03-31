@@ -14,28 +14,23 @@ where = ["src"]
 egg_base = "."
 
 [project]
-name = "project"
+name = "proj3"
 version = "0.0.1"
-description = "description of the project"
+description = "station control framework to control instrument in qcodes for now!!!"
 authors = [{name = "Ai-mation"}]
 readme = "README.md"
 requires-python = ">=3.9"
 license = {file = "LICENSE"}
-dynamic = ["dependencies", "optional-dependencies"]
-dependencies = []
-
-
-[tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
-optional-dependencies = {dev = { file = ["requirements-dev.txt"] }}
 
 
 [tool.pytest.ini_options]
-addopts = ""
-testpaths = ["tests"]
+addopts = "-v -s"
+testpaths = [
+    "tests"
+]
 
 [project.urls]
-Homepage = "https://github.com/Ai-mation/python-template.git"
+Homepage = "https://github.com/Ai-mation/STE.git"
 
 [tool.black]
 line-length = 79

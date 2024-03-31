@@ -1,0 +1,104 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - develop
+      - production
+  pull_request:
+    branches:
+      - develop
+      - production
+
+jobs:
+  # Pre-commit-widnows:
+  #   runs-on: [windows-latest]
+  #   strategy:
+  #     matrix:
+  #       python-version: ['3.10', '3.11', '3.12']
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
+
+  #     - name: Set up Python
+  #       uses: actions/setup-python@v3
+  #       with:
+  #         python-version: ${{ matrix.python-version }}
+
+  #     - name: Lint code
+  #       run: |
+  #         python -m venv env
+  #         env/Scripts/activate
+  #         pip install pre-commit
+  #         pre-commit install
+  #         pre-commit run --all-files --color always
+
+  Pre-commit-macLinx:
+    runs-on: ${{ matrix.os }}
+    continue-on-error: true
+    strategy:
+      matrix:
+        os: [macos-latest] #ubuntu-latest]
+        python-version: ['3.10'] #['3.11', '3.12']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Lint code
+        run: |
+          python -m venv env
+          source env/bin/activate
+          pip install pre-commit
+          pre-commit install
+          pre-commit run --all-files --color always
+
+  Pytest-windows:
+    runs-on: [ windows-latest ]
+    strategy:
+      matrix:
+
+        python-version: ['3.10', '3.11', '3.12']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run pytest
+        run: |
+          python -m venv env
+          env/Scripts/activate
+          pip install -r requirements.txt
+          python -m pytest -v -s
+
+  Pytest-macLinux:
+    runs-on: ${{ matrix.os }}
+    continue-on-error: true
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ['3.10', '3.11', '3.12']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run pytest
+        run: |
+          python -m venv env
+          source env/bin/activate
+          pip install -r requirements.txt
+          python -m pytest -v -s

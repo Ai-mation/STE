@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm[toml]>=8"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools_scm]
+write_to = "_version.py"
+
+[tool.setuptools.packages.find]
+namespaces = false
+where = ["src"]
+
+[tool.distutils.egg_info]
+egg_base = "."
+
+[project]
+name = "project"
+version = "0.0.1"
+description = "description of the project"
+authors = [{name = "Ai-mation"}]
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+dynamic = ["dependencies", "optional-dependencies"]
+dependencies = []
+
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+optional-dependencies = {dev = { file = ["requirements-dev.txt"] }}
+
+
+[tool.pytest.ini_options]
+addopts = ""
+testpaths = ["tests"]
+
+[project.urls]
+Homepage = "https://github.com/Ai-mation/python-template.git"
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+line_length = 79
+profile = "black"
+skip_gitignore = true

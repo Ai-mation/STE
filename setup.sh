@@ -1,4 +1,4 @@
-rm -rf venv
+rm -rf env
 python3 -m venv env
 if [[ "$OSTYPE" == "darwin"* ]]
 then

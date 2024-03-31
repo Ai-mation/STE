@@ -23,6 +23,12 @@ requires-python = ">=3.9"
 license = {file = "LICENSE"}
 
 
+[tool.pytest.ini_options]
+addopts = "-v -s"
+testpaths = [
+    "tests"
+]
+
 [project.urls]
 Homepage = "https://github.com/Ai-mation/STE.git"
 

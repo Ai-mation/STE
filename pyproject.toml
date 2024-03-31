@@ -21,13 +21,6 @@ authors = [{name = "Ai-mation"}]
 readme = "README.md"
 requires-python = ">=3.9"
 license = {file = "LICENSE"}
-dynamic = ["dependencies", "optional-dependencies"]
-dependencies = []
-
-
-[tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
-optional-dependencies = {dev = { file = ["requirements-dev.txt"] }}
 
 
 [tool.pytest.ini_options]

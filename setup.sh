@@ -11,5 +11,7 @@ then
 
 fi
 pip install --upgrade pip
-pip install --editable ".[dev]"
+pip install -r requirements.txt
+pip install -r requirements-dev.txt
+pip install --editable "."
 pre-commit install

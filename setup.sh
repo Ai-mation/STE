@@ -1,12 +1,12 @@
 rm -rf venv
-python3 -m venv venv
+python3 -m venv env
 if [[ "$OSTYPE" == "darwin"* ]]
 then
-    source ./venv/bin/activate
+    source ./env/bin/activate
 
 elif [[ "$OSTYPE" == "msys" ]]
 then
-    source ./venv/Scripts/activate
+    source ./env/Scripts/activate
 
 
 fi

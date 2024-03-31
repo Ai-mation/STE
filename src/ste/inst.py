@@ -1,6 +1,6 @@
 from qcodes.instrument_drivers.mock_instruments import DummyInstrument
-from qcodes.utils import validators as vals
 from qcodes.station import Station
+from qcodes.utils import validators as vals
 
 
 class Experiement:
